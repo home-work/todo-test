@@ -27,21 +27,21 @@ public class Application {
         todo_5.setDescription("Làm bài tập số 5");
         todo_5.setDone(false);
         todo_5.setDue("14/07/2018");
-        TodoList todoList = new TodoList();
-        todoList.add(todo_1);
-        todoList.add(todo_2);
-        todoList.add(todo_3);
-        todoList.add(todo_4);
-        todoList.add(todo_5);
+        TodoList todoLists = new TodoList();
+        todoLists.add(todo_1);
+        todoLists.add(todo_2);
+        todoLists.add(todo_3);
+        todoLists.add(todo_4);
+        todoLists.add(todo_5);
 
-        System.out.println(todoList.find("Bài tập về nhà").getDescription());
+        System.out.println(todoLists.find("Bài tập về nhà").getDescription());
 
-        System.out.println(todoList.showDones().get(1).getDescription());
+        System.out.println(todoLists.showDones().get(1).getDescription());
 
-        System.out.println(todoList.showPastDue().get(1).getDescription());
+        System.out.println(todoLists.showPastDue().get(1).getDescription());
 
-        todoList.removeDones();
+        todoLists.removeDones();
 
-        System.out.println(todoList.size());
+        System.out.println(todoLists.size());
     }
 }
