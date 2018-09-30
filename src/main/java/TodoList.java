@@ -45,7 +45,7 @@ public class TodoList {
     public List<Todo> showPastDue(){
         List<Todo> list = new ArrayList<Todo>();
         for (int i = 0; i < todoLists.size(); i++) {
-            if (todoLists.get(i).getDue().compareTo(new Date()) < 0) {
+            if (todoLists.get(i).getDue().compareTo(new Date()) < 0 && !todoLists.get(i).isDone()) {
                 list.add(todoLists.get(i));
             }
         }
