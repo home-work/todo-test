@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class TodoList {
-    private List<Todo> todoLists = new ArrayList<Todo>();
+    private List<Todo> todoLists = new ArrayList<>();
     public void add(Todo todo) {
         todoLists.add(todo);
     }
@@ -23,7 +21,7 @@ public class TodoList {
     }
 
     public List<Todo> showDones() {
-        List<Todo> list = new ArrayList<Todo>();
+        List<Todo> list = new ArrayList<>();
         for (int i = 0; i < todoLists.size(); i++) {
             if (todoLists.get(i).isDone()) {
                 list.add(todoLists.get(i));
@@ -33,7 +31,7 @@ public class TodoList {
     }
 
     public List<Todo> showNotDones() {
-        List<Todo> list = new ArrayList<Todo>();
+        List<Todo> list = new ArrayList<>();
         for (int i = 0; i < todoLists.size(); i++) {
             if (!todoLists.get(i).isDone()) {
                 list.add(todoLists.get(i));
@@ -43,7 +41,7 @@ public class TodoList {
     }
 
     public List<Todo> showPastDue(){
-        List<Todo> list = new ArrayList<Todo>();
+        List<Todo> list = new ArrayList<>();
         for (int i = 0; i < todoLists.size(); i++) {
             if (todoLists.get(i).getDue().compareTo(new Date()) < 0 && !todoLists.get(i).isDone()) {
                 list.add(todoLists.get(i));
@@ -53,9 +51,11 @@ public class TodoList {
     }
 
     public void removeDones(){
-        for (int i = 0; i < todoLists.size(); i++) {
-            if (todoLists.get(i).isDone()) {
-                todoLists.remove(todoLists.get(i));
+        Iterator iterator = todoLists.iterator();
+        while (iterator.hasNext()) {
+            Todo todo = (Todo) iterator.next();
+            if (todo.isDone()) {
+                iterator.remove();
             }
         }
     }

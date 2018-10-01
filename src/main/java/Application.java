@@ -5,7 +5,7 @@ public class Application {
         Todo todo_1 = new Todo();
         todo_1.setTitle("Bài tập về nhà");
         todo_1.setDescription("Làm bài tập số 1");
-        todo_1.setDone(false);
+        todo_1.setDone(true);
         todo_1.setDue(new Date());
         Todo todo_2 = new Todo();
         todo_2.setTitle("Bài tập về nhà");
@@ -34,6 +34,7 @@ public class Application {
         todoLists.add(todo_4);
         todoLists.add(todo_5);
 
+
         System.out.println(todoLists.find("Bài tập về nhà").getDescription());
 
         System.out.println(todoLists.showDones().get(1).getDescription());
@@ -43,5 +44,6 @@ public class Application {
         todoLists.removeDones();
 
         System.out.println(todoLists.size());
+        System.out.println(todoLists.showAll().get(1).getDescription());
     }
 }
